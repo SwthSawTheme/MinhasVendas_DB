@@ -50,6 +50,7 @@ Cada consulta foi criada para atender a uma necessidade específica de informaç
 1. Execute o script de criação de estruturas para criar todas as tabelas necessárias.
 2. Em seguida, execute o script de inserção de dados para popular o banco de dados.
 3. Por fim, utilize o script de consultas para testar e validar as informações armazenadas.
+4. É necessário ter o SGBD SQL Server instalado!
 
 ## Observações
 
