@@ -1,0 +1,52 @@
+CREATE DATABASE MinhasVendas
+USE MinhasVendas
+
+CREATE TABLE País (
+	ID_País INT IDENTITY(1,1) PRIMARY KEY,
+	Nome VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Estado (
+	ID_Estado INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(50) NOT NULL,
+	ID_País INT REFERENCES País(ID_País)
+)
+
+CREATE TABLE Cidade (
+	ID_Cidade INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(50) NOT NULL,
+	ID_Estado INT REFERENCES Estado(ID_Estado)
+)
+
+CREATE TABLE Logradouro (
+	ID_Logradouro INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(50) NOT NULL,
+	Numero INT NOT NULL,
+	ID_Cidade INT REFERENCES Cidade(ID_Cidade)
+)
+
+CREATE TABLE Cliente (
+	ID_Cliente INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(50) NOT NULL,
+	CPF CHAR(11) NOT NULL,
+	Telefone CHAR(13),
+	ID_Logradouro INT REFERENCES Logradouro(ID_Logradouro)
+)
+
+CREATE TABLE Venda (
+	ID_Venda INT IDENTITY PRIMARY KEY,
+	Data_Venda DATE NOT NULL,
+	ID_Cliente INT REFERENCES Cliente(ID_Cliente)
+)
+
+CREATE TABLE Produto(
+	ID_Produto INT IDENTITY PRIMARY KEY,
+	Descrição VARCHAR(50),
+	Valor MONEY NOT NULL
+)
+
+CREATE TABLE Cotem (
+	Quantidade INT,
+	ID_Produto INT NOT NULL REFERENCES Produto(ID_Produto),
+	ID_Venda INT NOT NULL REFERENCES Venda(ID_Venda)
+)
