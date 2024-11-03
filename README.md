@@ -19,7 +19,7 @@ O modelo lógico apresentado no diagrama contém as seguintes entidades principa
 6. **Produto**: Registra produtos disponíveis para venda.
 7. **Venda**: Registra informações de cada venda realizada, associada a um cliente.
 8. **Contem**: Tabela de relacionamento entre venda e produto, indicando quais produtos foram vendidos em cada venda e a quantidade.
-![modelo lógico](logico.png)
+![modelo lógico](./src/logico.png)
 ### Estrutura das Tabelas
 
 #### SQL de Criação das Estruturas
@@ -57,5 +57,3 @@ Cada consulta foi criada para atender a uma necessidade específica de informaç
 Este projeto foi desenvolvido com o objetivo de demonstrar a criação e manipulação de um banco de dados relacional para controle de vendas. O modelo lógico e as consultas foram elaborados para explorar as relações entre clientes, produtos e suas localizações.
 Todos os dados utilizados foram gerados de forma aleatória no site 4Devs
 ---
-
-
